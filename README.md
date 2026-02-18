@@ -4,6 +4,13 @@ Step 0) Wipe hard drive (add instructions for that)
 
 Then update MacOS to newest version.
 
+Install node.js from downloadable installer.
+
+Make sure to add bin to $PATH:
+```
+echo "export PATH=\"$BIN_PATH:\$PATH\"" >> ~/.zshrc 
+```
+
 
 
 # Installing Openclaw
