@@ -11,7 +11,10 @@ Make sure to add bin to $PATH:
 echo "export PATH=\"$BIN_PATH:\$PATH\"" >> ~/.zshrc 
 ```
 
-
+Might need to do this also (If getting EACCESS errors)
+```
+sudo chown -R $(whoami) /usr/local/lib/node_modules
+```
 
 # Installing Openclaw
 ```
@@ -55,3 +58,66 @@ I like to choose these options for ollama setup:
 11)  Enable hooks: Skip for now
 
 12) How do you want to hatch your bot: Hatch in TUI (recommended)
+
+
+
+
+
+## Brew install
+
+(Because Ollama installed through brew seemed to work best for me)
+
+install with brew from: https://brew.sh/
+
+make sure to run the commands at the end.
+
+
+## Ollama Install
+
+```brew install ollama```
+
+
+✅ 1️⃣ Start Ollama
+ollama serve
+
+
+(Leave it running in that terminal.)
+
+In another terminal, you can interact with it.
+
+✅ 2️⃣ List Installed Models
+ollama list
+
+
+If it’s fresh, you’ll probably see nothing.
+
+✅ 3️⃣ See Available Models (Remote Library)
+
+You can search:
+
+ollama search qwen
+
+
+Or browse:
+
+👉 https://ollama.com/library
+
+
+```
+ollama pull qwen2.5-coder:7b
+```
+
+✅ 5️⃣ Test It
+ollama run qwen2.5-coder:7b
+
+
+Type something and make sure it responds.
+
+Exit with:
+
+```
+/bye
+```
+
+
+
