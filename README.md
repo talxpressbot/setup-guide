@@ -14,7 +14,9 @@ echo "export PATH=\"$BIN_PATH:\$PATH\"" >> ~/.zshrc
 
 
 # Installing Openclaw
-
+```
+npm i -g openclaw
+```
 
 
 
