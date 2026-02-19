@@ -119,5 +119,53 @@ Exit with:
 /bye
 ```
 
+Edit ~/.openclaw/openclaw.json and replace it with this:
+```json
+{
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "ollama-local",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "qwen2.5-coder:7b",
+            "name": "Qwen2.5 Coder 7B (Intel Safe)",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 4096,
+            "maxTokens": 512,
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/qwen2.5-coder:7b"
+      },
+      "maxSteps": 4
+    }
+  }
+}
+```
 
+Then restart ollama
+```
+pkill ollama
+ollama serve
+```
 
+Then restart OpenClaw:
+
+```
+openclaw gateway restart
+```
